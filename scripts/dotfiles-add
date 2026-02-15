@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+dotfiles_folder="$HOME/dotfiles"
+
+# Verify args
+if [[ -z "$*" ]]; then
+	echo "Usage: $(basename "$0") <files>"
+	exit 1
+fi
+
+# Verify dotfiles folder existance
+if [ ! -d "$dotfiles_folder" ]; then
+	echo -e "Creating backup folder \033[92m$(realpath $dotfiles_folder)\033[0m"
+	mkdir -p "$dotfiles_folder"
+	git init "$dotfiles_folder" 1>/dev/null
+	git remote add origin https://github.com/matmat37000/dotfiles.git
+fi
+
+# Create symlink
+for file in "$@"; do
+	if [ ! -e "$file" ]; then
+		echo -e "\033[91m$file not found.\033[0m"
+		continue
+	elif [ -L "$file" ]; then
+		echo -e "\033[91m$file is a symlink.\033[0m"
+		continue
+	fi
+
+	full_path=$(realpath -s "$file")
+	path=${full_path//$HOME\//}
+	store_dir="$dotfiles_folder/$(dirname "$path")"
+	echo -ne "Moving \033[93m$path\033[0m to \033[93m$store_dir\033[0m...\r"
+
+	# Avoid overwriting
+	if [ -e "$store_dir/$file" ] || [ -L "$file" ]; then
+		echo -e "Moving \033[93m$file\033[0m to \033[93m$store_dir\033[0m... \033[91mFailed\033[0m (File alreay exists)"
+		continue
+	fi
+
+	mkdir -p "$store_dir"
+	mv "$file" "$store_dir"
+	echo -e "Moving \033[93m$file\033[0m to \033[93m$store_dir\033[0m... \033[32mDone\033[0m"
+
+	echo -ne "Creating symlink for \033[93m$file\033[0m...\r"
+	ln -s "$dotfiles_folder/$path" "$file"
+	echo -e "Creating symlink for \033[93m$file\033[0m... \033[32mDone\033[0m"
+
+	echo -ne "Adding \033[93m$path\033[0m to git...\r"
+	cd "$dotfiles_folder" || exit
+	git add "$path"
+	git commit --quiet -m "Added $path to dotfiles." 1>/dev/null
+	git push --quiet origin main 1>/dev/null
+	echo -e "Adding \033[93m$path\033[0m to git... \033[32mDone\033[0m"
+done
