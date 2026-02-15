@@ -1,0 +1,10 @@
+export XCURSOR_THEME=macOS
+export XCURSOR_SIZE=28
+export XDG_SESSION_TYPE=wayland
+export GBM_BACKEND=nvidia-drm
+export LIBVA_DRIVER_NAME=nvidia
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export NVD_BACKEND=direct
+export GTK_MODULES=appmenu-gtk-module
+export GTK_THEME=catppuccin-macchiato-green-standard+default
+export DOTNET_ROOT=/home/mathiol/.dotnet/
