@@ -29,7 +29,7 @@ for file in "$@"; do
 	full_path=$(realpath -s "$file")
 	path=${full_path//$HOME\//}
 	store_dir="$dotfiles_folder/$(dirname "$path")"
-	echo -ne "Moving \033[93m$path\033[0m to \033[93m$store_dir\033[0m...\r"
+	echo -ne "Moving \033[93m$file\033[0m to \033[93m$store_dir\033[0m...\r"
 
 	# Avoid overwriting
 	if [ -e "$store_dir/$file" ] || [ -L "$file" ]; then
