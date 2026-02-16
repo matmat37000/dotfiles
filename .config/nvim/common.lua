@@ -1,3 +1,5 @@
+vim.opt.completeopt='menu,menuone,noselect'
+
 -- Line number
 vim.wo.number = true
 
