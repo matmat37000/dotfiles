@@ -8,6 +8,7 @@ vim.opt.encoding = "utf-8"
 
 -- Disable swapfile
 vim.opt.swapfile = false
+vim.opt.updatetime = 300
 
 -- Tab configuration
 vim.opt.scrolloff = 7
