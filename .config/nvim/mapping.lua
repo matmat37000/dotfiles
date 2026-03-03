@@ -4,7 +4,7 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Basic
-map('t', '<Esc>' '<C-\\><C-n>', opts)
+map('t', '<Esc>', '<C-\\><C-n>', opts)
 -- Tab switching
 map('n', '<A-Up>', '<cmd>BufferPrevious<cr>', opts)
 map('n', '<A-Down>', '<cmd>BufferNext<cr>', { silent = true})
