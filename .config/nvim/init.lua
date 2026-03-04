@@ -1,6 +1,3 @@
-local vim = vim
-local Plug = vim.fn['plug#']
-
 -- VIM Plug Install
 local data_dir = vim.fn.stdpath('data')
 if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
@@ -8,6 +5,9 @@ if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
   vim.o.runtimepath = vim.o.runtimepath
   vim.cmd('autocmd VimEnter * PlugInstall --sync | source $MYVIMRC')
 end
+
+local vim = vim
+local Plug = vim.fn['plug#']
 
 -- VIM Plug plugin list
 vim.call('plug#begin')
