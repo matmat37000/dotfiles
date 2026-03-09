@@ -5,13 +5,16 @@ local opts = { noremap = true, silent = true }
 
 -- Basic
 map('t', '<Esc>', '<C-\\><C-n>', opts)
--- Tab switching
+map({ 'n', 'v' }, '<C-PageUp>, '<cmd>move -2<cr>', opts)
+map({ 'n', 'v' }, '<C-PageDown>, '<cmd>move +1<cr>', opts)
+
+-- Tab switching:
 map('n', '<A-Up>', '<cmd>BufferPrevious<cr>', opts)
 map('n', '<A-Down>', '<cmd>BufferNext<cr>', { silent = true})
--- -- Re-order
+-- Re-order
 map('n', '<S-A-Up>', '<cmd>BufferMovePrevious<cr>', opts)
 map('n', '<S-A-Down>', '<cmd>BufferMoveNext<cr>', opts)
--- -- Go-to
+-- Go-to
 map('n', '<A-1>', '<cmd>BufferGoto 1<cr>', opts)
 map('n', '<A-2>', '<cmd>BufferGoto 2<cr>', opts)
 map('n', '<A-3>', '<cmd>BufferGoto 3<cr>', opts)
@@ -22,9 +25,9 @@ map('n', '<A-7>', '<cmd>BufferGoto 7<cr>', opts)
 map('n', '<A-8>', '<cmd>BufferGoto 8<cr>', opts)
 map('n', '<A-9>', '<cmd>BufferGoto 9<cr>', opts)
 map('n', '<A-0>', '<cmd>BufferLast<cr>', opts)
--- -- Pin Buffer
+-- Pin Buffer
 map('n', '<A-p>', '<cmd>BufferPin<cr>', opts)
--- -- Close buffer
+-- Close buffer
 map('n', '<A-w>', '<cmd>BufferClose<cr>', opts)
 map('n', '<A-t>', '<cmd>BufferRestore<cr>', opts)
 
