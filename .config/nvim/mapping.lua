@@ -6,9 +6,9 @@ local opts = { noremap = true, silent = true }
 -- Basic
 map('t', '<Esc>', '<C-\\><C-n>', opts)
 map('n', '<C-PageUp>', '<cmd>move -2<cr>', opts)
-map('v', '<C-PageUp>', '<cmd>\'<, \'>move -2<cr>', opts)
+map('v', '<C-PageUp>', '<cmd>>move \'<-2<cr>', opts)
 map('n', '<C-PageDown>', '<cmd>move +1<cr>', opts)
-map('v', '<C-PageDown>', '<cmd>\'<, \'>move +1<cr>', opts)
+map('v', '<C-PageDown>', '<cmd>move \'>+1<cr>', opts)
 
 -- Tab switching:
 map('n', '<A-Up>', '<cmd>BufferPrevious<cr>', opts)
