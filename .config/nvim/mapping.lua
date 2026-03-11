@@ -14,8 +14,8 @@ map('v', '<C-PageDown>', '<cmd>move \'>+1<cr>', opts)
 map('n', '<S-Left>', '<cmd>BufferPrevious<cr>', opts)
 map('n', '<S-Right>', '<cmd>BufferNext<cr>', { silent = true})
 -- Re-order
-map('n', '<S-A-Up>', '<cmd>BufferMovePrevious<cr>', opts)
-map('n', '<S-A-Down>', '<cmd>BufferMoveNext<cr>', opts)
+map('n', '<S-A-Left>', '<cmd>BufferMovePrevious<cr>', opts)
+map('n', '<S-A-Right>', '<cmd>BufferMoveNext<cr>', opts)
 -- Go-to
 map('n', '<A-1>', '<cmd>BufferGoto 1<cr>', opts)
 map('n', '<A-2>', '<cmd>BufferGoto 2<cr>', opts)
