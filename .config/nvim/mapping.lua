@@ -36,8 +36,8 @@ map('n', '<A-t>', '<cmd>BufferRestore<cr>', opts)
 -- Split pan switch
 map('n', '<A-Left>', '<cmd>wincmd h<cr>', opts)
 map('n', '<A-Right>', '<cmd>wincmd l<cr>', opts)
-map('n', '<A-Up>', '<cmd>wincmd h<cr>', opts)
-map('n', '<A-Down>', '<cmd>wincmd h<cr>', opts)
+map('n', '<A-Up>', '<cmd>wincmd k<cr>', opts)
+map('n', '<A-Down>', '<cmd>wincmd j<cr>', opts)
 
 
 -- nvim-tree
