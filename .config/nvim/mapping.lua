@@ -11,8 +11,8 @@ map('n', '<C-PageDown>', '<cmd>move +1<cr>', opts)
 map('v', '<C-PageDown>', '<cmd>move \'>+1<cr>', opts)
 
 -- Tab switching:
-map('n', '<A-Up>', '<cmd>BufferPrevious<cr>', opts)
-map('n', '<A-Down>', '<cmd>BufferNext<cr>', { silent = true})
+map('n', '<S-Left>', '<cmd>BufferPrevious<cr>', opts)
+map('n', '<S-Right>', '<cmd>BufferNext<cr>', { silent = true})
 -- Re-order
 map('n', '<S-A-Up>', '<cmd>BufferMovePrevious<cr>', opts)
 map('n', '<S-A-Down>', '<cmd>BufferMoveNext<cr>', opts)
@@ -36,6 +36,8 @@ map('n', '<A-t>', '<cmd>BufferRestore<cr>', opts)
 -- Split pan switch
 map('n', '<A-Left>', '<cmd>wincmd h<cr>', opts)
 map('n', '<A-Right>', '<cmd>wincmd l<cr>', opts)
+map('n', '<A-Up>', '<cmd>wincmd h<cr>', opts)
+map('n', '<A-Down>', '<cmd>wincmd h<cr>', opts)
 
 
 -- nvim-tree
