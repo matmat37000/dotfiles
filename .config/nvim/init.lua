@@ -44,6 +44,8 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip', {['tag'] = 'v2.*', ['do'] = 'make install_jsregexp'})
 Plug('saadparwaiz1/cmp_luasnip')
 
+-- Live server
+Plug('https://github.com/wolandark/vim-live-server.git', { ['do'] = 'sudo npm install -g live-server' })
 
 vim.call('plug#end')
 
