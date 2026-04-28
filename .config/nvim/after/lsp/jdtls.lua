@@ -11,7 +11,7 @@ return {
           '/usr/share/openjfx/lib/javafx.swing.jar',
           '/usr/share/openjfx/lib/javafx.web.jar',
         },
-      }
+      },
       import = {
          gradle = {
            enabled = true,
@@ -23,3 +23,4 @@ return {
       },
     },
   }
+
