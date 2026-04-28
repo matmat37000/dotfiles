@@ -1,5 +1,5 @@
 return {
-  settings = {
+ settings = {
     java = {
       project = {
         referencedLibraries = {
@@ -12,6 +12,14 @@ return {
           '/usr/share/openjfx/lib/javafx.web.jar',
         },
       }
-    }
+      import = {
+         gradle = {
+           enabled = true,
+         },
+         maven = {
+           enabled = true,
+          },
+        },
+      },
+    },
   }
-}
