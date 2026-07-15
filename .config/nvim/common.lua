@@ -20,3 +20,11 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 
 vim.opt.fileformat = "unix"
+
+-- Commands
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
