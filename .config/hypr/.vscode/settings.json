@@ -1,0 +1,11 @@
+{
+    "editor.minimap.showRegionSectionHeaders": true,
+    "Lua.workspace.library": [
+        "/usr/share/hypr/stubs",
+        "stubs",
+    ],
+    "editor.formatOnSave": true,
+    "[lua]": {
+        "editor.defaultFormatter": "sumneko.lua"
+    }
+}
