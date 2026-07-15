@@ -2,7 +2,7 @@ configuration {
     modes: "window,run,ssh,drun";
     sorting-method: "normal";
     show-icons:true;
-    matching: "regex";
+    matching: "fuzzy";
     drun-match-fields: "name";
     display-run: "Menu:";
     display-ssh: "SSH:";
@@ -13,7 +13,7 @@ configuration {
 @theme "catppuccin"
 
 * {
-    font: "Iosevka Nerd Font 12";
+    font: "JetBrainsMono Nerd Font 14";
 
     background-color:   transparent;
     text-color:         @fg0;
