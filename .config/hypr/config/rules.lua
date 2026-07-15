@@ -276,7 +276,7 @@ local workspace_rules = {
     {
         workspace = "special:steam",
         no_shadow = true,
-        on_created_empty = 'notify-send "Launching Steam..." && gtk-launch steam'
+        on_created_empty = 'notify-send -t 1000 "Launching Steam..." && gtk-launch steam'
     }
 }
 
