@@ -17,18 +17,26 @@ source $HOME/.cargo/env
 # My aliases
 alias config-zsh='nvim ~/.zshrc'
 alias config-hypr='nvim ~/.config/hypr/hyprland.conf'
+alias files-clean='ncdu -x -t 6 --no-follow-symlinks --color dark'
+
+alias ssh='kitty +kitten ssh'
 
 alias vpn-disable='sudo wg-quick down wg0'
 alias vpn-enable='sudo wg-quick up wg0'
 
 alias vscode='code'
 
+alias vim='nvim'
+alias v='nvim'
+alias dvim='vim'
+
 # My export
 export PATH="$PATH:$HOME/scripts/"
 export HYPRSHOT_DIR="/home/mathiol/Pictures/Screenshots/"
-export HYPRLAND_CONFIG="/home/mathiol/.config/hypr/hyprland.conf"
+export HYPRLAND_CONFIG="/home/mathiol/.config/hypr/hyprland.lua"
 export COLOR=1
 export STEAM_DATA_DIR="/mnt/ssd/Applications/Steam/"
+#export BROWSER='zen-browser'
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -114,7 +122,8 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker gradle)
+plugins+=(gradle-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -148,7 +157,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # UWSM
-if uwsm check may-start && uwsm select; then
+if uwsm check may-start -q && uwsm select; then
   exec uwsm start default
 fi
 
@@ -156,3 +165,5 @@ fi
 export PF_ASCII="Catppuccin"
 pfetch
 export PATH="$PATH:/home/mathiol/.local/share/JetBrains/Toolbox/scripts"
+
+source /usr/share/nvm/init-nvm.sh
